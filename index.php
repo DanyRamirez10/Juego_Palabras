@@ -116,12 +116,12 @@
   <div class="container">
     <button class="button student-button" onclick="window.location.href = 'loginAlumno.php';">
       <i class="fas fa-user-graduate"></i>
-      <span class="student-name">Nombre del estudiante</span>
+      <span class="student-name">Estudiante</span>
     </button>
 
     <button class="button teacher-button" onclick="window.location.href = 'docente/';">
       <i class="fas fa-chalkboard-teacher"></i>
-      <span class="teacher-name">Nombre del profesor</span>
+      <span class="teacher-name">Profesor</span>
     </button>
   </div>
 
