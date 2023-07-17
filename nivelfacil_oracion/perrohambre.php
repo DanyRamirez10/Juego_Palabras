@@ -29,7 +29,7 @@ body {
 .dropZone {
   border: 5px solid black;
   background-color: white;
-  width: 300px;
+  width: 500px;
   height: 40px;
   padding: 20px;
   border-radius: 0;
@@ -75,15 +75,19 @@ body {
   font-weight: bold;
 }
 
-.dropZone .syllable {
-  display: inline-block;
-  border: none;
-  padding: 0;
-  margin: 3px;
-  font-size: 24px;
-  font-weight: bold;
-  font-family: 'Lumen', sans-serif;
-}
+@font-face {
+      font-family: 'Lumen-Full';
+      src: url('../Lumen-Full.ttf') format('truetype');
+    }
+    .dropZone .syllable {
+      display: inline-block;
+      border: none;
+      padding: 0;
+      margin: 5px;
+      font-size: 50px;/*tamano de las letras*/
+      font-weight: bold;
+      font-family: 'Lumen-Full', sans-serif;
+    }
 
 .syllables {
   display: flex;

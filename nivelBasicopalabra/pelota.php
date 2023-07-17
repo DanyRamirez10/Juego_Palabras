@@ -144,12 +144,12 @@
       background-position: center;
       background-size: contain;
     }
-        #menuButton {
+    #menuButton {
       position: fixed;
       top: 40px; /* Ajusta el valor para bajar más */
       left: 60px; /* Ajusta el valor para desplazar hacia la derecha */
       padding: 40px;
-      background-color: #333;
+      background-color: white; /* Cambia el color del botón a azul */
       color: white;
       font-weight: bold;
       cursor: pointer;

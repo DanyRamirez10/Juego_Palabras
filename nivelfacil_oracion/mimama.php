@@ -84,20 +84,19 @@
     font-size: 24px;
     font-weight: bold;
     }
-    @font-face {
-    font-family: 'Lumen-Full';
-    src: url('../Lumen-Full.ttf') format('truetype');
+        @font-face {
+      font-family: 'Lumen-Full';
+      src: url('../Lumen-Full.ttf') format('truetype');
     }
     .dropZone .syllable {
-    display: inline-block;
-    border: none;
-    padding: 0;
-    margin: 5px;
-    font-size: 50px;/*tamano de las letras*/
-    font-weight: bold;
-    font-family: 'Lumen-Full', sans-serif;
+      display: inline-block;
+      border: none;
+      padding: 0;
+      margin: 5px;
+      font-size: 50px;/*tamano de las letras*/
+      font-weight: bold;
+      font-family: 'Lumen-Full', sans-serif;
     }
-
     .syllables {
     display: flex;
     flex-wrap: wrap;

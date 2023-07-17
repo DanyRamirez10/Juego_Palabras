@@ -63,7 +63,6 @@
     <title>ESCOGE COMO JUGAR</title>
 </head>
 <body>
-<audio id="bg-audio" src="../sonidos/audioInicial.mp3" autoplay loop></audio>
 
 <div class="title-container">
     <h1>BIENVENIDO ESCOGE COMO JUGAR</h1>
@@ -81,7 +80,7 @@
         <button onclick="location.href='NivelesO.php'">Oraciones</button>
     </center>  
 </div>
-<audio id="audioPlayer" src="../sonidos/audioInicial.mp3" preload="auto" autoplay loop></audio>
+
 
 
 </body>
