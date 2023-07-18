@@ -25,6 +25,8 @@
             font-weight: bolder;
             padding: 3px;
             border: solid 2px black;
+            font-family: 'Lumen-Full';
+            src: url('../Lumen-Full.ttf') format('truetype'); /* Ajusta la ruta y el formato del archivo de la fuente */
         }
 
         #boton:hover {
@@ -134,8 +136,8 @@
     <!-- El boton que nos sirve para recargar la pagina y asi generar una nueva palabra y volver a jugar -->
     <button id="boton" type="reset" onclick="javascript:window.location.reload();">Volver a Jugar</button>
     <!-- Botón adicional para redireccionar a otro archivo -->
-    <button id="redireccionar" onclick="javascript:window.location.href = 'gato.php';" disabled></button>
-    <button id="volver" onclick="javascript:window.location.href = '../pantallas/NivelesP.php';"></button>
+    <button id="redireccionar" onclick="javascript:window.location.href = 'sol.php';" disabled></button>
+    <button id="volver" onclick="javascript:window.location.href = 'gato.php';"></button>
 
     <!-- Audio de error -->
     <audio id="audioError" src="../sonidos/error2.mp3"></audio>
@@ -145,7 +147,7 @@
         var ctx;
         var canvas;
         var palabra;
-        var letras = "QERTYUIóPASDFGHJKLÑCVBNM";
+        var letras = "QERTYUIOPASDFGHJKLÑCVBNM";
         var colorTecla = "#585858";
         var colorMargen = "red";
         var inicioX = 200;
@@ -162,12 +164,12 @@
         /* Variables de control */
         var aciertos = 0;
         var errores = 0;
-        var maxErrores = 4; // Número máximo de errores permitidos
+        var maxErrores = 3; // Número máximo de errores permitidos
 
         /* Palabra e imagen fija */
         var imagen1 = new Image();
-        imagen1.src = "../imagenes/leon.jpg";
-        palabras_array.push("LEóN");
+        imagen1.src = "../imagenes/rio.png";
+        palabras_array.push("RIO");
 
         /* Objetos */
         function Tecla(x, y, ancho, alto, letra) {
@@ -274,7 +276,7 @@
         /* dibujar cadalzo y partes del pj segun sea el caso */
         function horca(errores) {
             var imagen = new Image();
-            imagen.src = "../imagenes/leon.jpg";
+            imagen.src = "../imagenes/rio.png";
             imagen.onload = function () {
                 ctx.drawImage(imagen, 390, 0, 230, 230);
             }
