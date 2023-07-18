@@ -13,10 +13,11 @@
             text-align: center;
         }
         
-        #pantalla{
+        #pantalla {
             border: groove 8px gold;
-            background: lightgreen;   
-        }
+            background: #F1948A ;
+}
+
         #boton {
             background-color: red;
             color: white;
