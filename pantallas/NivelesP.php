@@ -42,7 +42,7 @@
 }
 
     body {
-        background-image: url("Imagenes/fondoninos.png");
+        background-image: url("../imagenes/fondonino2.png");
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;

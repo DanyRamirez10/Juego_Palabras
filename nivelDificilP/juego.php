@@ -13,10 +13,11 @@
             text-align: center;
         }
         
-        #pantalla{
+        #pantalla {
             border: groove 8px gold;
-            background: lightgreen;   
-        }
+            background: #F1948A ;
+}
+
         #boton {
             background-color: red;
             color: white;
@@ -28,7 +29,7 @@
         }
 
         #boton:hover {
-            /* Estilo que se activa al pasar el puntero sobre el boton */
+            /* Estilo que se activa al pasar el puntero sobre el botón */
             background-color: lightcoral;
             font-size: 22px;
             border: groove 4px red;
@@ -75,11 +76,57 @@
             font-size: 22px;
             border: groove 4px blue;
         }
+        /*funcion globos*/
+        @keyframes balloonRain {
+        0% {
+          transform: translate(-50%, -100%) rotate(0deg);
+        }
+        100% {
+          transform: translate(-50%, 100vh) rotate(360deg);
+        }
+      }
+
+        .balloon-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .balloon {
+      width: 50px;
+      height: 70px;
+      background-image: url('../imagenes/globo.png'); /* Ruta de la imagen del globo */
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      animation: balloonRain 10s linear infinite;
+    }/*funcion globos*/
+        #menuButton {
+            position: fixed;
+            top: 40px; /* Ajusta el valor para bajar más */
+            left: 60px; /* Ajusta el valor para desplazar hacia la derecha */
+            padding: 40px;
+            background-color: #333;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            background-image: url('../imagenes/menuP.png'); /* Ruta de la imagen para el botón de menu principal */
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            font-size: 40px; /* Tamaño de fuente aumentado */
+    }
     </style>
 </head>
 
 <body>
     <h1>-JUEGO DE PALABRAS-</h1>
+    <button id="menuButton" onclick="goToMainMenu()"></button>
     <canvas id="pantalla" width="960px" height="450px">
         <!-- etiqueta del canvas con sus medidas en la pantalla -->
         Tu navegador no soporta Canvas.
@@ -88,15 +135,18 @@
     <!-- El boton que nos sirve para recargar la pagina y asi generar una nueva palabra y volver a jugar -->
     <button id="boton" type="reset" onclick="javascript:window.location.reload();">Volver a Jugar</button>
     <!-- Botón adicional para redireccionar a otro archivo -->
-    <button id="redireccionar" onclick="javascript:window.location.href = 'gato.php';">  </button>
-    <button id="volver" onclick="javascript:window.location.href = '../pantallas/NivelesP.php';">    </button>
+    <button id="redireccionar" onclick="javascript:window.location.href = 'gato.php';" disabled></button>
+    <button id="volver" onclick="javascript:window.location.href = '../pantallas/NivelesP.php';"></button>
+
+    <!-- Audio de error -->
+    <audio id="audioError" src="../sonidos/error2.mp3"></audio>
 
     <script>
         /* Variables */
         var ctx;
         var canvas;
         var palabra;
-        var letras = "QERTYUIOPASDFGHJKLÑCVBNM";
+        var letras = "QERTYUIóPASDFGHJKLÑCVBNM";
         var colorTecla = "#585858";
         var colorMargen = "red";
         var inicioX = 200;
@@ -113,11 +163,12 @@
         /* Variables de control */
         var aciertos = 0;
         var errores = 0;
+        var maxErrores = 4; // Número máximo de errores permitidos
 
         /* Palabra e imagen fija */
         var imagen1 = new Image();
         imagen1.src = "../imagenes/leon.jpg";
-        palabras_array.push("LEON");
+        palabras_array.push("LEóN");
 
         /* Objetos */
         function Tecla(x, y, ancho, alto, letra) {
@@ -217,7 +268,7 @@
                 miLetra = new Letra(x, y, lon, lon, letra);
                 miLetra.dibuja();
                 letras_array.push(miLetra);
-               x += lon +margen;
+                x += lon +margen;
             }
         }
 
@@ -266,13 +317,18 @@
                 if (bandera == false) { /* Si falla aumenta los errores y checa si perdio para mandar a la funcion gameover */
                     errores++;
                     horca(errores);
-                    if (errores == 5) gameOver(errores);
+                    if (errores == maxErrores) {
+                        playErrorAudio();
+                        gameOver(errores);
+                    }
                 }
                 /* Borra la tecla que se a presionado */
                 ctx.clearRect(tecla.x - 1, tecla.y - 1, tecla.ancho + 2, tecla.alto + 2);
                 tecla.x - 1;
                 /* checa si se gano y manda a la funcion gameover */
-                if (aciertos == palabra.length) gameOver(errores);
+                if (aciertos == palabra.length) {
+                    gameOver(errores);
+                }
             }
         }
 
@@ -282,7 +338,7 @@
             ctx.fillStyle = "black";
 
             ctx.font = "bold 50px Courier";
-            if (errores < 5) {
+            if (errores < maxErrores) {
                 ctx.fillText("Muy bien, la palabra es: ", 110, 280);
             } else {
                 ctx.fillText("Lo sentimos, la palabra era: ", 110, 280);
@@ -292,6 +348,30 @@
             lon = (canvas.width - (palabra.length * 48)) / 2;
             ctx.fillText(palabra, lon, 380);
             horca(errores);
+
+            if (aciertos == palabra.length) {
+                // Aparece la lluvia de globos
+                var balloonContainer = document.createElement('div');
+                balloonContainer.classList.add('balloon-container');
+                for (var i = 0; i < 30; i++) {
+                    var balloon = document.createElement('div');
+                    balloon.classList.add('balloon');
+                    balloonContainer.appendChild(balloon);
+                }
+                document.body.appendChild(balloonContainer);
+                // Restablecer el contenido del contenedor después de 3 segundos
+                setTimeout(function() {
+                    balloonContainer.remove();
+                    // Habilitar el botón para redireccionar
+                    document.getElementById("redireccionar").disabled = false;
+                }, 4000);
+            }
+        }
+
+        /* Reproduce el audio de error */
+        function playErrorAudio() {
+            var audioError = document.getElementById("audioError");
+            audioError.play();
         }
 
         /* Detectar si se a cargado nuestro contexto en el canvas, iniciamos las funciones necesarias para jugar o se le manda msj de error segun sea el caso */
@@ -308,6 +388,10 @@
                     alert("Error al cargar el contexto!");
                 }
             }
+        }
+
+        function goToMainMenu() {
+            window.location.href = '../pantallas/NivelesP.php'; // Reemplaza "NivelesP.php" con la ruta a tu menú principal
         }
     </script>
 </body>

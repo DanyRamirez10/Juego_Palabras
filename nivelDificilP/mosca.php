@@ -136,8 +136,8 @@
     <!-- El boton que nos sirve para recargar la pagina y asi generar una nueva palabra y volver a jugar -->
     <button id="boton" type="reset" onclick="javascript:window.location.reload();">Volver a Jugar</button>
     <!-- Botón adicional para redireccionar a otro archivo -->
-    <button id="redireccionar" onclick="javascript:window.location.href = 'rio.php';" disabled></button>
-    <button id="volver" onclick="javascript:window.location.href = 'juego.php';"></button>
+    <button id="redireccionar" onclick="javascript:window.location.href = 'mosca.php';" disabled></button>
+    <button id="volver" onclick="javascript:window.location.href = 'sol.php';"></button>
 
     <!-- Audio de error -->
     <audio id="audioError" src="../sonidos/error2.mp3"></audio>
@@ -164,12 +164,12 @@
         /* Variables de control */
         var aciertos = 0;
         var errores = 0;
-        var maxErrores = 4; // Número máximo de errores permitidos
+        var maxErrores = 5; // Número máximo de errores permitidos
 
         /* Palabra e imagen fija */
         var imagen1 = new Image();
-        imagen1.src = "../imagenes/gato.png";
-        palabras_array.push("GATO");
+        imagen1.src = "../imagenes/mosca.png";
+        palabras_array.push("MOSCA");
 
         /* Objetos */
         function Tecla(x, y, ancho, alto, letra) {
@@ -276,7 +276,7 @@
         /* dibujar cadalzo y partes del pj segun sea el caso */
         function horca(errores) {
             var imagen = new Image();
-            imagen.src = "../imagenes/gato.png";
+            imagen.src = "../imagenes/mosca.png";
             imagen.onload = function () {
                 ctx.drawImage(imagen, 390, 0, 230, 230);
             }

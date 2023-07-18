@@ -10,12 +10,10 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background-image: url('../imagenes/fondoNormal.jpg'); /* Ruta de la imagen de fondo */
+      background-image: url('../imagenes/fondo2.jpg'); /* Ruta de la imagen de fondo */
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      /*background-size: 800px 600px;*/
-      
     }
 
     #container {
@@ -24,9 +22,14 @@
       align-items: center;
     }
 
+    @font-face {
+      font-family: 'Lumen-Full';
+      src: url('../Lumen-Full.ttf') format('truetype'); /* Ajusta la ruta y el formato del archivo de la fuente */
+    }
+
     .clickableElement {
-      width: 100px;
-      height: 100px;
+      width: 110px;
+      height: 90px;
       background-color: blue;
       color: white;
       text-align: center;
@@ -36,16 +39,16 @@
       font-style: italic;
       font-weight: bold;
       font-size: 66px;
-      font-family: 'Vladimir Script';
+       font-family: 'Lumen-Full', sans-serif; /* Utiliza el nombre de la fuente definido en @font-face */
+      border: 4px solid #000; /* Añadir borde de 2px de ancho y color negro */
     }
-
     #dropZone {
       display: flex;
       flex-direction: row;
       justify-content: flex-start;
-      width: 200px;
+      width: 280px;
       height: 100px;
-      border: 4px solid rgb(230, 14, 14);
+      border: 8px solid rgb(230, 14, 14);
       margin-top: 20px;
       margin-bottom: 10px;
     }
@@ -139,10 +142,55 @@
       background-position: center;
       background-size: contain;
     }
-    @keyframes rotate {
-  0% { transform: translate(-50%, -50%) rotate(0deg); }
-  100% { transform: translate(-50%, -50%) rotate(360deg); }
-}
+    #menuButton {
+      position: fixed;
+      top: 40px; /* Ajusta el valor para bajar más */
+      left: 60px; /* Ajusta el valor para desplazar hacia la derecha */
+      padding: 40px;
+      background-color: #333;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      background-image: url('../imagenes/menuP.png'); /* Ruta de la imagen para el botón de menu principal */
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      font-size: 40px; /* Tamaño de fuente aumentado */
+    }
+      @keyframes rotate {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+    }
+    /*funcion globos*/
+    @keyframes balloonRain {
+        0% {
+          transform: translate(-50%, -100%) rotate(0deg);
+        }
+        100% {
+          transform: translate(-50%, 100vh) rotate(360deg);
+        }
+      }
+
+        .balloon-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .balloon {
+      width: 50px;
+      height: 70px;
+      background-image: url('../imagenes/globo.png'); /* Ruta de la imagen del globo */
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      animation: balloonRain 5s linear infinite;
+    }/*funcion globos*/
 
   </style>
 </head>
@@ -153,10 +201,10 @@
     <div id="dropZone"></div>
     <div>
       <div class="clickableElement" data-sound="sound4">Cam</div>
-      <div class="clickableElement" data-sound="sound5">ma</div>
+      <div class="clickableElement" data-sound="sound5">mi</div>
       <div class="clickableElement" data-sound="sound5">pa</div>
+      <div class="clickableElement" data-sound="sound5">no</div>
       <div class="clickableElement" data-sound="sound6">na.</div>
-
 
     </div>
     <div id="score">Puntaje: 0</div>
@@ -166,8 +214,8 @@
     <button id="redirectButton" disabled></button>
     <button id="backButton" onclick="goBack()"></button>
     <button id="reloadButton" onclick="reloadPage()"></button>
+    <button id="menuButton" onclick="goToMainMenu()"></button>
   </div>
-
   <audio id="successAudio" src="../sonidos/felicidades.mp3" preload="auto"></audio>
   <audio id="errorAudio" src="../sonidos/ay-caramba.mp3" preload="auto"></audio>
   <audio id="ballAudio" src="../sonidos/casa.mp3" preload="auto"></audio>
@@ -180,7 +228,7 @@
     var errorAudio = document.getElementById('errorAudio');
     var ballAudio = document.getElementById('ballAudio');
 
-    var randomSyllables = ['Cam', 'pa','na','ma']; // Sílabas aleatorias
+    var randomSyllables = ['Cam', 'pa','na.','mi','no']; // Sílabas aleatorias
     var randomComponents = ['Componente1', 'Componente2','Componente3']; // Componentes aleatorios
     var droppedSyllables = []; // Sílabas que han sido soltadas en el dropZone
     var score = 0;
@@ -228,6 +276,7 @@
     });
 
     function checkWord() {
+      var successMessageElement = document.getElementById('successMessage'); // Obtener la referencia al elemento del mensaje de éxito
       var currentSyllables = Array.from(dropZone.children).map(function(element) {
         return element.getAttribute('data-component');
       });
@@ -240,6 +289,21 @@
         stars += '★';
         updateStars();
         document.getElementById('redirectButton').removeAttribute('disabled');
+        // Crear globos y agregarlos al contenedor
+        var balloonContainer = document.createElement('div');
+        balloonContainer.classList.add('balloon-container');
+        for (var i = 0; i < 20; i++) {
+          var balloon = document.createElement('div');
+          balloon.classList.add('balloon');
+          balloonContainer.appendChild(balloon);
+        }
+        document.body.appendChild(balloonContainer);
+
+    // Restablecer el contenido del contenedor después de 3 segundos
+    setTimeout(function() {
+      successMessageElement.innerHTML = '';
+      balloonContainer.remove();
+    }, 3000);
       } else if (currentSyllables.length >= 3) {
         showErrorMessage('Palabra incorrecta. No se formó la palabra correcta.');
         errorAudio.play();
@@ -251,7 +315,7 @@
 
   function showSuccessMessage(message) {
   var successMessageElement = document.getElementById('successMessage');
-  successMessageElement.innerHTML = '<img src="../imagenes/feli.gif" alt="Imagen sin fondo" style="width: 100%; height: auto; animation: zoomAndBlink 1s infinite;">';
+  successMessageElement.innerHTML = '<img src="../imagenes/balloon-3.gif" alt="Imagen sin fondo" style="width: 100%; height: auto; animation: zoomAndBlink 1s infinite;">';
   successMessageElement.style.fontSize = '48px'; // Ajusta el tamaño de la fuente
   successMessageElement.style.position = 'fixed'; // Establece la posición fija
   successMessageElement.style.top = '50%'; // Alinea verticalmente al centro
@@ -296,10 +360,16 @@ function showErrorMessage(message) {
       window.location.href = 'montaña.php'; // Reemplaza con la URL de redirección correcta
     });
     function goBack() {
-        window.location.href = '../pantallas/nivelesP.php'; // Reemplaza con la URL para retroceder
+      window.location.href = '../pantallas/NivelesP.php'; // Reemplaza con la URL para retroceder
+    }
+    function goBack() {
+      window.history.back();
     }
     function reloadPage() {
       location.reload();
+    }
+    function goToMainMenu() {
+      window.location.href = '../pantallas/NivelesP.php'; // Reemplaza "menu_principal.php" con la ruta a tu menú principal
     }
   </script>
 </body>
