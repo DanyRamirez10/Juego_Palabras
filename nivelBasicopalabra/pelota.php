@@ -144,12 +144,12 @@
       background-position: center;
       background-size: contain;
     }
-    #menuButton {
+        #menuButton {
       position: fixed;
       top: 40px; /* Ajusta el valor para bajar más */
       left: 60px; /* Ajusta el valor para desplazar hacia la derecha */
       padding: 40px;
-      background-color: white; /* Cambia el color del botón a azul */
+      background-color: white;
       color: white;
       font-weight: bold;
       cursor: pointer;
@@ -324,7 +324,7 @@
 
     function showSuccessMessage(message) {
       var successMessageElement = document.getElementById('successMessage');
-      successMessageElement.innerHTML = '<img src="../imagenes/feli.gif" alt="Imagen sin fondo" style="width: 100%; height: auto; animation: zoomAndBlink 1s infinite;">';
+      successMessageElement.innerHTML = '<img src="../imagenes/balloon-3.gif" alt="Imagen sin fondo" style="width: 100%; height: auto; animation: zoomAndBlink 1s infinite;">';
       successMessageElement.style.fontSize = '48px'; // Ajusta el tamaño de la fuente
       successMessageElement.style.position = 'fixed'; // Establece la posición fija
       successMessageElement.style.top = '50%'; // Alinea verticalmente al centro

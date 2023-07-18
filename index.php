@@ -29,7 +29,7 @@
     /* Estilos para los botones */
     .button {
       display: inline-block;
-      padding: 10px;
+      padding: 15px; /* Ajusta el tamaño del padding para hacer los botones más grandes */
       border: none;
       background-color: #007bff;
       color: #fff;
@@ -37,6 +37,7 @@
       margin-bottom: 20px; /* Ajusta el espacio entre los botones */
       border-radius: 5px; /* Cambia la forma del botón a redondeado */
       transition: background-color 0.3s; /* Agrega una transición suave al cambiar el color de fondo */
+      font-size: 35px; /* Ajusta el tamaño de la fuente de los botones */
     }
 
     /* Estilos para el texto del estudiante */
@@ -76,8 +77,9 @@
     /* Estilos para el texto superior */
     h1 {
       color: green; /* Cambia el color del texto a verde */
-      margin-top: 10px; /* Ajusta el margen superior del texto */
+      margin-top: 5px; /* Ajusta el margen superior del texto */
       text-align: center;
+      font-size: 30px; /* Ajusta el tamaño de la fuente del encabezado */
     }
 
     /* Estilos para el texto en el borde superior */
@@ -129,3 +131,4 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
 </body>
 </html>
+
