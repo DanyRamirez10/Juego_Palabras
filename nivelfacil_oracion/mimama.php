@@ -294,7 +294,7 @@
       syllablesContainer.classList.add("syllables");
 
       // Generar una lista de palabras y mezclarla
-      var words = ["Mi", "Mama", "me", "ama."];
+      var words = ["Mi", "Mamá", "me", "ama."];
       var shuffledWords = shuffleArray(words);
 
       // Mezclar el orden de los teclados
@@ -330,7 +330,7 @@
           var enteredWord = syllables.map(function(syllable) {
             return syllable.textContent;
           }).join(" ");
-          var correctWord = "Mi Mama me ama."; // Palabra correcta
+          var correctWord = "Mi Mamá me ama."; // Palabra correcta
 
           if (enteredWord === correctWord) {
             playAudio("audio-congratulations");
