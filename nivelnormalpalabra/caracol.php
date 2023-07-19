@@ -197,13 +197,13 @@
 <body>
   <div id="container">
     <!-- Contenido HTML aquí -->
-    <img id="ballImage" src="../imagenes/serpiente.png" alt="Imagen" width="300" height="200">
+    <img id="ballImage" src="../imagenes/caracol.png" alt="Imagen" width="300" height="200">
     <div id="dropZone"></div>
     <div>
-      <div class="clickableElement" data-sound="sound4">te.</div>
-      <div class="clickableElement" data-sound="sound5">Ser</div>
-      <div class="clickableElement" data-sound="sound5">ci</div>
-      <div class="clickableElement" data-sound="sound6">pi</div>
+      <div class="clickableElement" data-sound="sound4">col.</div>
+      <div class="clickableElement" data-sound="sound5">Ca</div>
+      <div class="clickableElement" data-sound="sound5">ki</div>
+      <div class="clickableElement" data-sound="sound6">ra</div>
       <div class="clickableElement" data-sound="sound7">en</div>
 
     </div>
@@ -228,8 +228,8 @@
     var errorAudio = document.getElementById('errorAudio');
     var ballAudio = document.getElementById('ballAudio');
 
-    var randomSyllables = ['Ser','pi','en','te.','ci']; // Sílabas aleatorias
-    var randomComponents = ['Componente1', 'Componente2','Componente3','Componente4']; // Componentes aleatorios
+    var randomSyllables = ['Ca','ra','col.','en','ki']; // Sílabas aleatorias
+    var randomComponents = ['Componente1', 'Componente2','Componente3']; // Componentes aleatorios
     var droppedSyllables = []; // Sílabas que han sido soltadas en el dropZone
     var score = 0;
     var stars = '★★';
@@ -281,10 +281,10 @@
         return element.getAttribute('data-component');
       });
 
-      if (currentSyllables.join('') === 'Componente1Componente2Componente3Componente4') {
+      if (currentSyllables.join('') === 'Componente1Componente2Componente3') {
         showSuccessMessage('¡Palabra correcta! Felicitaciones');
         successAudio.play();
-        score += 2;
+        score += 2;''
         updateScore();
         stars += '★';
         updateStars();
@@ -304,10 +304,10 @@
       successMessageElement.innerHTML = '';
       balloonContainer.remove();
     }, 3000);
-      } else if (currentSyllables.length >= 4) {
+      } else if (currentSyllables.length >= 3) {
         showErrorMessage('Palabra incorrecta. No se formó la palabra correcta.');
         errorAudio.play();
-      } else if (currentSyllables.length === 5) {
+      } else if (currentSyllables.length === 4) {
         showErrorMessage('Palabra incorrecta. No se formó la palabra correcta.');
         errorAudio.play();
       }
@@ -357,10 +357,10 @@ function showErrorMessage(message) {
 
     var redirectButton = document.getElementById('redirectButton');
     redirectButton.addEventListener('click', function() {
-      window.location.href = 'caracol.php'; // Reemplaza con la URL de redirección correcta
+      window.location.href = 'corazon.php'; // Reemplaza con la URL de redirección correcta
     });
     function goBack() {
-      window.location.href = 'elefante.php'; // Reemplaza con la URL para retroceder
+      window.location.href = 'serpiente.php'; // Reemplaza con la URL para retroceder
     }
     function goBack() {
       window.history.back();

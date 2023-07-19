@@ -99,9 +99,9 @@
     }
 
     .balloon {
-      width: 50px;
-      height: 70px;
-      background-image: url('../imagenes/globo.png'); /* Ruta de la imagen del globo */
+      width: 60px;
+      height: 85px;
+      background-image: url('../imagenes/balloon-3.gif');  /* Ruta de la imagen del globo */
       background-size: contain;
       background-repeat: no-repeat;
       background-position: center;
@@ -141,6 +141,8 @@
 
     <!-- Audio de error -->
     <audio id="audioError" src="../sonidos/error2.mp3"></audio>
+    <!-- Audio de felicitaciones -->
+    <audio id="audioFelicitaciones" src="../sonidos/felicidades.mp3"></audio>
 
     <script>
         /* Variables */
@@ -351,10 +353,12 @@
             horca(errores);
 
             if (aciertos == palabra.length) {
+                 // Reproducir audio de felicitaciones
+                playFelicitacionesAudio();
                 // Aparece la lluvia de globos
                 var balloonContainer = document.createElement('div');
                 balloonContainer.classList.add('balloon-container');
-                for (var i = 0; i < 30; i++) {
+                for (var i = 0; i < 20; i++) {
                     var balloon = document.createElement('div');
                     balloon.classList.add('balloon');
                     balloonContainer.appendChild(balloon);
@@ -373,6 +377,10 @@
         function playErrorAudio() {
             var audioError = document.getElementById("audioError");
             audioError.play();
+        }
+        function playFelicitacionesAudio() {
+            var audioFelicitaciones = document.getElementById("audioFelicitaciones");
+            audioFelicitaciones.play();
         }
 
         /* Detectar si se a cargado nuestro contexto en el canvas, iniciamos las funciones necesarias para jugar o se le manda msj de error segun sea el caso */

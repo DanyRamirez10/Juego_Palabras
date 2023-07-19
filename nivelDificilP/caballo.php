@@ -13,11 +13,10 @@
             text-align: center;
         }
         
-        #pantalla {
+        #pantalla{
             border: groove 8px gold;
-            background: #F1948A ;
-}
-
+            background: lightgreen;   
+        }
         #boton {
             background-color: red;
             color: white;
@@ -26,6 +25,8 @@
             font-weight: bolder;
             padding: 3px;
             border: solid 2px black;
+            font-family: 'Lumen-Full';
+            src: url('../Lumen-Full.ttf') format('truetype'); /* Ajusta la ruta y el formato del archivo de la fuente */
         }
 
         #boton:hover {
@@ -99,7 +100,7 @@
 
     .balloon {
       width: 60px;
-      height: 85px;
+      height: 84px;
       background-image: url('../imagenes/balloon-3.gif'); /* Ruta de la imagen del globo */
       background-size: contain;
       background-repeat: no-repeat;
@@ -135,20 +136,19 @@
     <!-- El boton que nos sirve para recargar la pagina y asi generar una nueva palabra y volver a jugar -->
     <button id="boton" type="reset" onclick="javascript:window.location.reload();">Volver a Jugar</button>
     <!-- Botón adicional para redireccionar a otro archivo -->
-    <button id="redireccionar" onclick="javascript:window.location.href = 'gato.php';" disabled></button>
-    <button id="volver" onclick="javascript:window.location.href = 'luna.php';"></button>
+    <button id="redireccionar" onclick="javascript:window.location.href = 'lagarto.php';" disabled></button>
+    <button id="volver" onclick="javascript:window.location.href = 'mosca.php';"></button>
 
     <!-- Audio de error -->
     <audio id="audioError" src="../sonidos/error2.mp3"></audio>
     <!-- Audio de felicitaciones -->
-    <audio id="audioFelicitaciones" src="../sonidos/felicidades.mp3"></audio>
-
+<audio id="audioFelicitaciones" src="../sonidos/felicidades.mp3"></audio>
     <script>
         /* Variables */
         var ctx;
         var canvas;
         var palabra;
-        var letras = "QERTYUIóPASDFGHJKLÑCVBNM";
+        var letras = "QERTYUIOPASDFGHJKLÑCVBNM";
         var colorTecla = "#585858";
         var colorMargen = "red";
         var inicioX = 200;
@@ -165,12 +165,12 @@
         /* Variables de control */
         var aciertos = 0;
         var errores = 0;
-        var maxErrores = 4; // Número máximo de errores permitidos
+        var maxErrores = 7; // Número máximo de errores permitidos
 
         /* Palabra e imagen fija */
         var imagen1 = new Image();
-        imagen1.src = "../imagenes/leon.jpg";
-        palabras_array.push("LEóN");
+        imagen1.src = "../imagenes/caballo.png";
+        palabras_array.push("CABALLO");
 
         /* Objetos */
         function Tecla(x, y, ancho, alto, letra) {
@@ -277,7 +277,7 @@
         /* dibujar cadalzo y partes del pj segun sea el caso */
         function horca(errores) {
             var imagen = new Image();
-            imagen.src = "../imagenes/leon.jpg";
+            imagen.src = "../imagenes/caballo.png";
             imagen.onload = function () {
                 ctx.drawImage(imagen, 390, 0, 230, 230);
             }
@@ -352,12 +352,13 @@
             horca(errores);
 
             if (aciertos == palabra.length) {
-                // Reproducir audio de felicitaciones
+                 // Reproducir audio de felicitaciones
                 playFelicitacionesAudio();
+
                 // Aparece la lluvia de globos
                 var balloonContainer = document.createElement('div');
                 balloonContainer.classList.add('balloon-container');
-                for (var i = 0; i < 30; i++) {
+                for (var i = 0; i < 20; i++) {
                     var balloon = document.createElement('div');
                     balloon.classList.add('balloon');
                     balloonContainer.appendChild(balloon);
@@ -369,7 +370,6 @@
                     // Habilitar el botón para redireccionar
                     document.getElementById("redireccionar").disabled = false;
                 }, 4000);
-
             }
         }
 
@@ -379,9 +379,10 @@
             audioError.play();
         }
         function playFelicitacionesAudio() {
-        var audioFelicitaciones = document.getElementById("audioFelicitaciones");
-        audioFelicitaciones.play();
+            var audioFelicitaciones = document.getElementById("audioFelicitaciones");
+            audioFelicitaciones.play();
         }
+
 
         /* Detectar si se a cargado nuestro contexto en el canvas, iniciamos las funciones necesarias para jugar o se le manda msj de error segun sea el caso */
         window.onload = function () {
