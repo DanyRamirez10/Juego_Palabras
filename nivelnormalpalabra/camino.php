@@ -46,7 +46,7 @@
       display: flex;
       flex-direction: row;
       justify-content: flex-start;
-      width: 280px;
+      width: 300px;
       height: 100px;
       border: 8px solid rgb(230, 14, 14);
       margin-top: 20px;
@@ -197,7 +197,7 @@
 <body>
   <div id="container">
     <!-- Contenido HTML aquí -->
-    <img id="ballImage" src="../imagenes/montaña.png" alt="Imagen" width="300" height="200">
+    <img id="ballImage" src="../imagenes/camino.png" alt="Imagen" width="300" height="200">
     <div id="dropZone"></div>
     <div>
       <div class="clickableElement" data-sound="sound4">no.</div>

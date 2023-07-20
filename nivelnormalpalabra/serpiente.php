@@ -46,7 +46,7 @@
       display: flex;
       flex-direction: row;
       justify-content: flex-start;
-      width: 280px;
+      width: 320px;
       height: 100px;
       border: 8px solid rgb(230, 14, 14);
       margin-top: 20px;
@@ -203,8 +203,7 @@
       <div class="clickableElement" data-sound="sound4">te.</div>
       <div class="clickableElement" data-sound="sound5">Ser</div>
       <div class="clickableElement" data-sound="sound5">ci</div>
-      <div class="clickableElement" data-sound="sound6">pi</div>
-      <div class="clickableElement" data-sound="sound7">en</div>
+      <div class="clickableElement" data-sound="sound6">pien</div>
 
     </div>
     <div id="score">Puntaje: 0</div>
@@ -228,8 +227,8 @@
     var errorAudio = document.getElementById('errorAudio');
     var ballAudio = document.getElementById('ballAudio');
 
-    var randomSyllables = ['Ser','pi','en','te.','ci']; // Sílabas aleatorias
-    var randomComponents = ['Componente1', 'Componente2','Componente3','Componente4']; // Componentes aleatorios
+    var randomSyllables = ['Ser','pien','te.','ci']; // Sílabas aleatorias
+    var randomComponents = ['Componente1', 'Componente2','Componente3']; // Componentes aleatorios
     var droppedSyllables = []; // Sílabas que han sido soltadas en el dropZone
     var score = 0;
     var stars = '★★';
@@ -281,7 +280,7 @@
         return element.getAttribute('data-component');
       });
 
-      if (currentSyllables.join('') === 'Componente1Componente2Componente3Componente4') {
+      if (currentSyllables.join('') === 'Componente1Componente2Componente3') {
         showSuccessMessage('¡Palabra correcta! Felicitaciones');
         successAudio.play();
         score += 2;

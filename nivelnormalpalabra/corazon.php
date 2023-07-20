@@ -46,7 +46,7 @@
       display: flex;
       flex-direction: row;
       justify-content: flex-start;
-      width: 280px;
+      width: 350px;
       height: 100px;
       border: 8px solid rgb(230, 14, 14);
       margin-top: 20px;

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <style>
+<style>
 body {
   display: flex;
   flex-direction: column;
@@ -10,7 +10,7 @@ body {
   height: 100vh;
   margin: 0;
   overflow: hidden;
-  background-image: url("../imagenes/fondoO.jpg");
+  background-image: url("../imagenesO/fondoOra.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -29,7 +29,7 @@ body {
 .dropZone {
   border: 5px solid black;
   background-color: white;
-  width: 500px;
+  width: 450px;
   height: 40px;
   padding: 20px;
   border-radius: 0;
@@ -46,36 +46,56 @@ body {
   display: inline-block;
   border: 2px solid gray;
   padding: 30px;
-  margin: 20px;
+  margin: 5px;
   cursor: pointer;
   font-family: 'Lumen', sans-serif;
 }
 
 .keyboard-1 {
   background-color: lightblue;
-  font-size: 24px;
+  font-size: 58px;
   font-weight: bold;
+  font-family: 'Lumen-Full', sans-serif; /* Agrega la fuente Lumen-Full */
+  width: 180px; /* Ajusta el valor según lo que necesites */
+  height: 70px; /* Ajusta el valor según lo que necesites */
+  padding: 10px; /* Ajusta el valor según lo que necesites */
+  text-align: center;
 }
 
 .keyboard-2 {
   background-color: lightgreen;
-  font-size: 24px;
+  font-size: 58px;
   font-weight: bold;
+  font-family: 'Lumen-Full', sans-serif; /* Agrega la fuente Lumen-Full */
+  width: 180px; /* Ajusta el valor según lo que necesites */
+  height: 70px; /* Ajusta el valor según lo que necesites */
+  padding: 10px; /* Ajusta el valor según lo que necesites */
+  text-align: center;
 }
 
 .keyboard-3 {
   background-color: lightyellow;
-  font-size: 24px;
+  font-size: 58px;
   font-weight: bold;
+  font-family: 'Lumen-Full', sans-serif; /* Agrega la fuente Lumen-Full */
+  width: 180px; /* Ajusta el valor según lo que necesites */
+  height: 70px; /* Ajusta el valor según lo que necesites */
+  padding: 10px; /* Ajusta el valor según lo que necesites */
+  text-align: center;
 }
 
 .keyboard-4 {
   background-color: lightpink;
-  font-size: 24px;
+  font-size: 58px;
   font-weight: bold;
+  font-family: 'Lumen-Full', sans-serif; /* Agrega la fuente Lumen-Full */
+  width: 172px; /* Ajusta el valor según lo que necesites */
+  height: 70px; /* Ajusta el valor según lo que necesites */
+  padding: 10px; /* Ajusta el valor según lo que necesites */
+  text-align: center;
 }
 
-@font-face {
+    @font-face {
       font-family: 'Lumen-Full';
       src: url('../Lumen-Full.ttf') format('truetype');
     }
@@ -83,12 +103,11 @@ body {
       display: inline-block;
       border: none;
       padding: 0;
-      margin: 5px;
+      margin: 10px;
       font-size: 50px;/*tamano de las letras*/
       font-weight: bold;
       font-family: 'Lumen-Full', sans-serif;
     }
-
 .syllables {
   display: flex;
   flex-wrap: wrap;
@@ -163,6 +182,7 @@ img {
   height: auto;
   margin-top: 10px;
   cursor: pointer;
+  background-color: white
 }
 
 .button-top-right {

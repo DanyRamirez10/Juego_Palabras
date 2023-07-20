@@ -47,7 +47,7 @@
 <body onload="playAudio()">
   <div class="image-container">
     <img src="../imagenes/profeo3.gif" alt="Imagen de transición">
-    <div class="image-text">Felicidades.... Completastes el nivel</div>
+    <div class="image-text">Felicidades....!!!  Completastes el nivel</div>
     <audio id="audioPlayer">
       <source src="../sonidos/ringtones.mp3" type="audio/mpeg">
       Tu navegador no admite el elemento de audio.

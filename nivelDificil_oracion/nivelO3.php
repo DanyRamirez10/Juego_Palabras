@@ -3,288 +3,300 @@
 <head>
   <style>
     body {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    overflow: hidden;
-    background-image: url("../imagenes/fondoO.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      overflow: hidden;
+      background-image: url("../imagenesO/fondoOra.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
     }
 
     .container {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: -330px;
-    position: relative;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: -330px;
+      position: relative;
     }
 
     .dropZone {
-    border: 5px solid black;
-    background-color: white;
-    width: 550px;
-    height: 40px;
-    padding: 20px;
-    border-radius: 0;
-    margin-bottom: 380px;
-    position: relative;
+      border: 5px solid black;
+      background-color: white;
+      width: 500px;
+      height: 40px;
+      padding: 20px;
+      border-radius: 0;
+      margin-bottom: 380px;
+      position: relative;
     }
 
     .keyboard-container {
-    position: relative;
-    top: -100px; /* Ajusta esta propiedad según tu necesidad */
+      position: relative;
+      top: -100px; /* Ajusta esta propiedad según tu necesidad */
     }
 
     .keyboard {
-    display: inline-block;
-    border: 2px solid gray;
-    padding: 30px;
-    margin: 20px;
-    cursor: pointer;
-    font-family: 'Lumen', sans-serif;
+      display: inline-block;
+      border: 2px solid gray;
+      padding: 30px;
+      margin: 5px;
+      cursor: pointer;
+      font-family: 'Lumen', sans-serif;
     }
 
     .keyboard-1 {
-    background-color: lightblue;
-    font-size: 24px;
-    font-weight: bold;
+      background-color: lightblue;
+      font-size: 58px;
+      font-weight: bold;
+      font-family: 'Lumen-Full', sans-serif; /* Agrega la fuente Lumen-Full */
+      width: 170px; /* Ajusta el valor según lo que necesites */
+      height: 70px; /* Ajusta el valor según lo que necesites */
+      padding: 10px; /* Ajusta el valor según lo que necesites */
+      text-align: center;
     }
 
     .keyboard-2 {
-    background-color: lightgreen;
-    font-size: 24px;
-    font-weight: bold;
+      background-color: lightgreen;
+      font-size: 58px;
+      font-weight: bold;
+      font-family: 'Lumen-Full', sans-serif; /* Agrega la fuente Lumen-Full */
+      width: 170px; /* Ajusta el valor según lo que necesites */
+      height: 70px; /* Ajusta el valor según lo que necesites */
+      padding: 10px; /* Ajusta el valor según lo que necesites */
+      text-align: center;
     }
 
     .keyboard-3 {
-    background-color: lightyellow;
-    font-size: 24px;
-    font-weight: bold;
+      background-color: lightyellow;
+      font-size: 58px;
+      font-weight: bold;
+      font-family: 'Lumen-Full', sans-serif; /* Agrega la fuente Lumen-Full */
+      width: 170px; /* Ajusta el valor según lo que necesites */
+      height: 70px; /* Ajusta el valor según lo que necesites */
+      padding: 10px; /* Ajusta el valor según lo que necesites */
+      text-align: center;
     }
 
     .keyboard-4 {
-    background-color: lightpink;
-    font-size: 24px;
-    font-weight: bold;
-    }
-    .keyboard-5 {
-    background-color: rgba(128, 0, 128, 0.5); /* Cambia los valores RGB y ajusta la opacidad según tus preferencias */
-    font-size: 24px;
-    font-weight: bold;
-    }
-    .keyboard-6 {
-    background-color: rgba(255, 105, 180, 0.5); /* Cambia los valores RGB y ajusta la opacidad según tus preferencias */
-    font-size: 24px;
-    font-weight: bold;
-    }
-    @font-face {
-    font-family: 'Lumen-Full';
-    src: url('../Lumen-Full.ttf') format('truetype');
-    }
-    .dropZone .syllable {
-    display: inline-block;
-    border: none;
-    padding: 0;
-    margin: 5px;
-    font-size: 50px;/*tamano de las letras*/
-    font-weight: bold;
-    font-family: 'Lumen-Full', sans-serif;
+      background-color: lightpink;
+      font-size: 58px;
+      font-weight: bold;
+      font-family: 'Lumen-Full', sans-serif; /* Agrega la fuente Lumen-Full */
+      width: 170px; /* Ajusta el valor según lo que necesites */
+      height: 70px; /* Ajusta el valor según lo que necesites */
+      padding: 10px; /* Ajusta el valor según lo que necesites */
+      text-align: center;
     }
 
+        @font-face {
+          font-family: 'Lumen-Full';
+          src: url('../Lumen-Full.ttf') format('truetype');
+        }
+        .dropZone .syllable {
+          display: inline-block;
+          border: none;
+          padding: 0;
+          margin: 10px;
+          font-size: 50px;/*tamano de las letras*/
+          font-weight: bold;
+          font-family: 'Lumen-Full', sans-serif;
+        }
     .syllables {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
     }
 
 
     .message-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 50px;
     }
 
     .message {
-    font-size: 20px;
-    font-weight: bold;
-    text-align: center;
-    padding: 10px;
-    margin-top: 10px;
-    width: 300px;
-    background-color: #eee;
-    border: 2px solid #555;
-    border-radius: 5px;
+      font-size: 20px;
+      font-weight: bold;
+      text-align: center;
+      padding: 10px;
+      margin-top: 10px;
+      width: 300px;
+      background-color: #eee;
+      border: 2px solid #555;
+      border-radius: 5px;
     }
 
     img {
-    width: 20%;
-    height: 30%;
-    margin-top: 50px;
+      width: 20%;
+      height: 30%;
+      margin-top: 50px;
     }
 
     .button-container {
-    position: fixed;
-    bottom: 2%;
-    left: 2%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-top: 90px;
+      position: fixed;
+      bottom: 2%;
+      left: 2%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-top: 90px;
     }
 
     .button-container img {
-    width: 8vw;
-    height: auto;
-    margin-top: 10px;
-    cursor: pointer;
+      width: 8vw;
+      height: auto;
+      margin-top: 10px;
+      cursor: pointer;
     }
 
     .next-button {
-    position: fixed;
-    bottom: 2%;
-    right: 2%;
+      position: fixed;
+      bottom: 2%;
+      right: 2%;
     }
 
     .refresh-button {
-    position: fixed;
-    bottom: 2%;
-    left: 2%;
+      position: fixed;
+      bottom: 2%;
+      left: 2%;
     }
 
     .button-top-left {
-    position: fixed;
-    top: 2%;
-    left: 2%;
-    z-index: 9999;
-    margin-top: 20px; /* Ajusta este valor según tu necesidad */
+      position: fixed;
+      top: 2%;
+      left: 2%;
+      z-index: 9999;
+      margin-top: 20px; /* Ajusta este valor según tu necesidad */
     }
 
     .button-top-left img {
-    width: 8vw;
-    height: auto;
-    margin-top: 10px;
-    cursor: pointer;
+      width: 8vw;
+      height: auto;
+      margin-top: 10px;
+      cursor: pointer;
+      background-color: white
     }
 
     .button-top-right {
-    position: fixed;
-    top: 2%;
-    right: 2%;
-    z-index: 9999;
+      position: fixed;
+      top: 2%;
+      right: 2%;
+      z-index: 9999;
     }
 
     .button-top-right img {
-    width: 8vw;
-    height: auto;
-    margin-top: 10px;
-    cursor: pointer;
+      width: 8vw;
+      height: auto;
+      margin-top: 3px;
+      cursor: pointer;
     }
 
     .score {
-    font-size: 18px;
-    font-weight: bold;
-    margin-top: 10px;
+      font-size: 18px;
+      font-weight: bold;
+      margin-top: 10px;
     }
 
     .audio-button {
-    width: 70px;
-    height: 70px;
-    margin-top: 30px;
-    cursor: pointer;
-    background-color: #ddd;
-    border: none;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+      width: 70px;
+      height: 70px;
+      margin-top: 30px;
+      cursor: pointer;
+      background-color: #ddd;
+      border: none;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     .popup-container {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 9999;
-    animation-name: zoom;
-    animation-duration: 3s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 9999;
+      animation-name: zoom;
+      animation-duration: 3s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
     }
 
     @keyframes zoom {
-    0% {
+      0% {
         transform: translate(-50%, -50%) scale(1);
-    }
-    50% {
+      }
+      50% {
         transform: translate(-50%, -50%) scale(1.2);
-    }
-    100% {
+      }
+      100% {
         transform: translate(-50%, -50%) scale(1);
-    }
+      }
     }
 
     .popup-image {
-    width: 90%;
-    height: auto;
+      width: 90%;
+      height: auto;
     }
 
     .audio-off {
-    background-color: #ddd;
+      background-color: #ddd;
     }
 
     .audio-on {
-    background-color: #ff7f50;
+      background-color: #ff7f50;
     }
 
     .audio-button img {
-    width: 90%;
-    height: 90%;
+      width: 90%;
+      height: 90%;
     }
 
     .header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 10px;
-    text-align: center;
-    font-size: 24px;
-    font-weight: bold;
-    z-index: 999;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 10px;
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      z-index: 999;
     }
 
     @media screen and (max-width: 600px) {
-    .header {
+      .header {
         font-size: 16px;
-    }
+      }
 
-    .container {
+      .container {
         margin-bottom: -230px;
-    }
+      }
 
-    .dropZone {
+      .dropZone {
         margin-bottom: 280px;
-    }
+      }
 
-    .keyboard-container {
+      .keyboard-container {
         top: 310px;
-    }
+      }
 
-    .keyboards {
+      .keyboards {
         display: flex;
         flex-direction: column;
         align-items: center;
+      }
     }
-    }
+
 
 
   </style>
@@ -490,7 +502,7 @@
   </script>
 </head>
 <body>
-  <div class="header">Modo de Juego Oraciones (NIVEL 2)</div>
+  <div class="header">Modo de juego oraciones (NIVEL 3)</div>
 
   <img src="../imagenesO/mueble.jpg" alt="Niños">
   

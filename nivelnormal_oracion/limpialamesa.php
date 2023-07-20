@@ -3,17 +3,17 @@
 <head>
   <style>
     body {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    overflow: hidden;
-    background-image: url("../imagenes/fondoO.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      overflow: hidden;
+      background-image: url("../imagenesO/fondoOra.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
     }
 
     .container {
@@ -29,7 +29,7 @@
     .dropZone {
     border: 5px solid black;
     background-color: white;
-    width: 500px;
+    width: 550px;
     height: 40px;
     padding: 20px;
     border-radius: 0;
@@ -46,44 +46,75 @@
     display: inline-block;
     border: 2px solid gray;
     padding: 30px;
-    margin: 20px;
+    margin: 1px;
     cursor: pointer;
     font-family: 'Lumen', sans-serif;
     }
 
     .keyboard-1 {
     background-color: lightblue;
-    font-size: 24px;
-    font-weight: bold;
+    font-size: 58px;
+      font-weight: bold;
+      font-family: 'Lumen-Full', sans-serif; /* Agrega la fuente Lumen-Full */
+      width: 140px; /* Ajusta el valor según lo que necesites */
+      height: 70px; /* Ajusta el valor según lo que necesites */
+      padding: 10px; /* Ajusta el valor según lo que necesites */
+      text-align: center;
     }
 
     .keyboard-2 {
     background-color: lightgreen;
-    font-size: 24px;
-    font-weight: bold;
+    font-size: 58px;
+      font-weight: bold;
+      font-family: 'Lumen-Full', sans-serif; /* Agrega la fuente Lumen-Full */
+      width: 140px; /* Ajusta el valor según lo que necesites */
+      height: 70px; /* Ajusta el valor según lo que necesites */
+      padding: 10px; /* Ajusta el valor según lo que necesites */
+      text-align: center;
     }
 
     .keyboard-3 {
     background-color: lightyellow;
-    font-size: 24px;
-    font-weight: bold;
+    font-size: 58px;
+      font-weight: bold;
+      font-family: 'Lumen-Full', sans-serif; /* Agrega la fuente Lumen-Full */
+      width: 140px; /* Ajusta el valor según lo que necesites */
+      height: 70px; /* Ajusta el valor según lo que necesites */
+      padding: 10px; /* Ajusta el valor según lo que necesites */
+      text-align: center;
     }
 
     .keyboard-4 {
     background-color: lightpink;
-    font-size: 24px;
-    font-weight: bold;
+    font-size: 58px;
+      font-weight: bold;
+      font-family: 'Lumen-Full', sans-serif; /* Agrega la fuente Lumen-Full */
+      width: 140px; /* Ajusta el valor según lo que necesites */
+      height: 70px; /* Ajusta el valor según lo que necesites */
+      padding: 10px; /* Ajusta el valor según lo que necesites */
+      text-align: center;
     }
     .keyboard-5 {
-    background-color: rgba(128, 0, 128, 0.5); /* Cambia los valores RGB y ajusta la opacidad según tus preferencias */
-    font-size: 24px;
-    font-weight: bold;
+      background-color: rgba(128, 0, 128, 0.5); /* Cambia los valores RGB y ajusta la opacidad según tus preferencias */
+    font-size: 58px;
+      font-weight: bold;
+      font-family: 'Lumen-Full', sans-serif; /* Agrega la fuente Lumen-Full */
+      width: 150px; /* Ajusta el valor según lo que necesites */
+      height: 70px; /* Ajusta el valor según lo que necesites */
+      padding: 10px; /* Ajusta el valor según lo que necesites */
+      text-align: center;
     }
     .keyboard-6 {
-    background-color: rgba(255, 105, 180, 0.5); /* Cambia los valores RGB y ajusta la opacidad según tus preferencias */
-    font-size: 24px;
-    font-weight: bold;
-    }
+      background-color: rgba(128, 0, 128, 0.5); /* Cambia los valores RGB y ajusta la opacidad según tus preferencias */
+    font-size: 58px;
+      font-weight: bold;
+      font-family: 'Lumen-Full', sans-serif; /* Agrega la fuente Lumen-Full */
+      width: 150px; /* Ajusta el valor según lo que necesites */
+      height: 70px; /* Ajusta el valor según lo que necesites */
+      padding: 10px; /* Ajusta el valor según lo que necesites */
+      text-align: center;
+}
+
     @font-face {
     font-family: 'Lumen-Full';
     src: url('../Lumen-Full.ttf') format('truetype');
@@ -172,6 +203,7 @@
     height: auto;
     margin-top: 10px;
     cursor: pointer;
+    background-color: white
     }
 
     .button-top-right {
@@ -490,7 +522,7 @@
   </script>
 </head>
 <body>
-  <div class="header">Modo de Juego Oraciones (NIVEL 2)</div>
+  <div class="header">Modo de juego oraciones (NIVEL 2)</div>
 
   <img src="../imagenesO/mamalimpiamesa.png" alt="Niños">
   
@@ -508,7 +540,7 @@
       <div class="keyboard keyboard-2" data-keyboard="2"></div>
       <div class="keyboard keyboard-3" data-keyboard="3"></div>
       <div class="keyboard keyboard-4" data-keyboard="4"></div>
-      <div class="keyboard keyboard-4" data-keyboard="5"></div>
+      <div class="keyboard keyboard-5" data-keyboard="5"></div>
     </div>
   </div>
 

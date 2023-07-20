@@ -201,7 +201,7 @@
     <div>
       <div class="clickableElement" data-sound="sound4">Pe</div>
       <div class="clickableElement" data-sound="sound5">lo</div>
-      <div class="clickableElement" data-sound="sound5">ta</div>
+      <div class="clickableElement" data-sound="sound5">ta.</div>
     </div>
     
     <div id="score">Puntaje: 0</div>
@@ -225,7 +225,7 @@
     var errorAudio = document.getElementById('errorAudio');
     var ballAudio = document.getElementById('ballAudio');
 
-    var randomSyllables = ['Pe', 'lo','ta']; // Sílabas aleatorias
+    var randomSyllables = ['Pe', 'lo','ta.']; // Sílabas aleatorias
     var randomComponents = ['Componente1', 'Componente2', 'Componente3']; // Componentes aleatorios
     var droppedSyllables = []; // Sílabas que han sido soltadas en el dropZone
     var score = 0;

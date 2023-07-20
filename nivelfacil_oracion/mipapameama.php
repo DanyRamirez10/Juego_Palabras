@@ -2,279 +2,300 @@
 <html>
 <head>
   <style>
-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
-  overflow: hidden;
-  background-image: url("../imagenes/fondoO.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      overflow: hidden;
+      background-image: url("../imagenesO/fondoOra.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
 
-.container {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: -330px;
-  position: relative;
-}
+    .container {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: -330px;
+      position: relative;
+    }
 
-.dropZone {
-  border: 5px solid black;
-  background-color: white;
-  width: 400px;
-  height: 40px;
-  padding: 20px;
-  border-radius: 0;
-  margin-bottom: 380px;
-  position: relative;
-}
+    .dropZone {
+      border: 5px solid black;
+      background-color: white;
+      width: 450px;
+      height: 40px;
+      padding: 20px;
+      border-radius: 0;
+      margin-bottom: 380px;
+      position: relative;
+    }
 
-.keyboard-container {
-  position: relative;
-  top: -100px; /* Ajusta esta propiedad según tu necesidad */
-}
+    .keyboard-container {
+      position: relative;
+      top: -100px; /* Ajusta esta propiedad según tu necesidad */
+    }
 
-.keyboard {
-  display: inline-block;
-  border: 2px solid gray;
-  padding: 30px;
-  margin: 20px;
-  cursor: pointer;
-  font-family: 'Lumen', sans-serif;
-}
+    .keyboard {
+      display: inline-block;
+      border: 2px solid gray;
+      padding: 30px;
+      margin: 5px;
+      cursor: pointer;
+      font-family: 'Lumen', sans-serif;
+    }
 
-.keyboard-1 {
-  background-color: lightblue;
-  font-size: 24px;
-  font-weight: bold;
-}
+    .keyboard-1 {
+      background-color: lightblue;
+      font-size: 58px;
+      font-weight: bold;
+      font-family: 'Lumen-Full', sans-serif; /* Agrega la fuente Lumen-Full */
+      width: 150px; /* Ajusta el valor según lo que necesites */
+      height: 70px; /* Ajusta el valor según lo que necesites */
+      padding: 10px; /* Ajusta el valor según lo que necesites */
+      text-align: center;
+    }
 
-.keyboard-2 {
-  background-color: lightgreen;
-  font-size: 24px;
-  font-weight: bold;
-}
+    .keyboard-2 {
+      background-color: lightgreen;
+      font-size: 58px;
+      font-weight: bold;
+      font-family: 'Lumen-Full', sans-serif; /* Agrega la fuente Lumen-Full */
+      width: 150px; /* Ajusta el valor según lo que necesites */
+      height: 70px; /* Ajusta el valor según lo que necesites */
+      padding: 10px; /* Ajusta el valor según lo que necesites */
+      text-align: center;
+    }
 
-.keyboard-3 {
-  background-color: lightyellow;
-  font-size: 24px;
-  font-weight: bold;
-}
+    .keyboard-3 {
+      background-color: lightyellow;
+      font-size: 58px;
+      font-weight: bold;
+      font-family: 'Lumen-Full', sans-serif; /* Agrega la fuente Lumen-Full */
+      width: 150px; /* Ajusta el valor según lo que necesites */
+      height: 70px; /* Ajusta el valor según lo que necesites */
+      padding: 10px; /* Ajusta el valor según lo que necesites */
+      text-align: center;
+    }
 
-.keyboard-4 {
-  background-color: lightpink;
-  font-size: 24px;
-  font-weight: bold;
-}
-@font-face {
-  font-family: 'Lumen-Full';
-  src: url('../Lumen-Full.ttf') format('truetype');
-}
-.dropZone .syllable {
-  display: inline-block;
-  border: none;
-  padding: 0;
-  margin: 5px;
-  font-size: 50px;/*tamano de las letras*/
-  font-weight: bold;
-  font-family: 'Lumen-Full', sans-serif;
-}
+    .keyboard-4 {
+      background-color: lightpink;
+      font-size: 58px;
+      font-weight: bold;
+      font-family: 'Lumen-Full', sans-serif; /* Agrega la fuente Lumen-Full */
+      width: 150px; /* Ajusta el valor según lo que necesites */
+      height: 70px; /* Ajusta el valor según lo que necesites */
+      padding: 10px; /* Ajusta el valor según lo que necesites */
+      text-align: center;
+    }
 
-.syllables {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
+        @font-face {
+          font-family: 'Lumen-Full';
+          src: url('../Lumen-Full.ttf') format('truetype');
+        }
+        .dropZone .syllable {
+          display: inline-block;
+          border: none;
+          padding: 0;
+          margin: 10px;
+          font-size: 50px;/*tamano de las letras*/
+          font-weight: bold;
+          font-family: 'Lumen-Full', sans-serif;
+        }
+    .syllables {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
 
 
-.message-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 50px;
-}
+    .message-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 50px;
+    }
 
-.message {
-  font-size: 20px;
-  font-weight: bold;
-  text-align: center;
-  padding: 10px;
-  margin-top: 10px;
-  width: 300px;
-  background-color: #eee;
-  border: 2px solid #555;
-  border-radius: 5px;
-}
+    .message {
+      font-size: 20px;
+      font-weight: bold;
+      text-align: center;
+      padding: 10px;
+      margin-top: 10px;
+      width: 300px;
+      background-color: #eee;
+      border: 2px solid #555;
+      border-radius: 5px;
+    }
 
-img {
-  width: 20%;
-  height: 30%;
-  margin-top: 50px;
-}
+    img {
+      width: 20%;
+      height: 30%;
+      margin-top: 50px;
+    }
 
-.button-container {
-  position: fixed;
-  bottom: 2%;
-  left: 2%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin-top: 90px;
-}
+    .button-container {
+      position: fixed;
+      bottom: 2%;
+      left: 2%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-top: 90px;
+    }
 
-.button-container img {
-  width: 8vw;
-  height: auto;
-  margin-top: 10px;
-  cursor: pointer;
-}
+    .button-container img {
+      width: 8vw;
+      height: auto;
+      margin-top: 10px;
+      cursor: pointer;
+    }
 
-.next-button {
-  position: fixed;
-  bottom: 2%;
-  right: 2%;
-}
+    .next-button {
+      position: fixed;
+      bottom: 2%;
+      right: 2%;
+    }
 
-.refresh-button {
-  position: fixed;
-  bottom: 2%;
-  left: 2%;
-}
+    .refresh-button {
+      position: fixed;
+      bottom: 2%;
+      left: 2%;
+    }
 
-.button-top-left {
-  position: fixed;
-  top: 2%;
-  left: 2%;
-  z-index: 9999;
-  margin-top: 20px; /* Ajusta este valor según tu necesidad */
-}
+    .button-top-left {
+      position: fixed;
+      top: 2%;
+      left: 2%;
+      z-index: 9999;
+      margin-top: 20px; /* Ajusta este valor según tu necesidad */
+    }
 
-.button-top-left img {
-  width: 8vw;
-  height: auto;
-  margin-top: 10px;
-  cursor: pointer;
-}
+    .button-top-left img {
+      width: 8vw;
+      height: auto;
+      margin-top: 10px;
+      cursor: pointer;
+      background-color: white
+    }
 
-.button-top-right {
-  position: fixed;
-  top: 2%;
-  right: 2%;
-  z-index: 9999;
-}
+    .button-top-right {
+      position: fixed;
+      top: 2%;
+      right: 2%;
+      z-index: 9999;
+    }
 
-.button-top-right img {
-  width: 8vw;
-  height: auto;
-  margin-top: 10px;
-  cursor: pointer;
-}
+    .button-top-right img {
+      width: 8vw;
+      height: auto;
+      margin-top: 3px;
+      cursor: pointer;
+    }
 
-.score {
-  font-size: 18px;
-  font-weight: bold;
-  margin-top: 10px;
-}
+    .score {
+      font-size: 18px;
+      font-weight: bold;
+      margin-top: 10px;
+    }
 
-.audio-button {
-  width: 70px;
-  height: 70px;
-  margin-top: 30px;
-  cursor: pointer;
-  background-color: #ddd;
-  border: none;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+    .audio-button {
+      width: 70px;
+      height: 70px;
+      margin-top: 30px;
+      cursor: pointer;
+      background-color: #ddd;
+      border: none;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-.popup-container {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 9999;
-  animation-name: zoom;
-  animation-duration: 3s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-}
+    .popup-container {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 9999;
+      animation-name: zoom;
+      animation-duration: 3s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+    }
 
-@keyframes zoom {
-  0% {
-    transform: translate(-50%, -50%) scale(1);
-  }
-  50% {
-    transform: translate(-50%, -50%) scale(1.2);
-  }
-  100% {
-    transform: translate(-50%, -50%) scale(1);
-  }
-}
+    @keyframes zoom {
+      0% {
+        transform: translate(-50%, -50%) scale(1);
+      }
+      50% {
+        transform: translate(-50%, -50%) scale(1.2);
+      }
+      100% {
+        transform: translate(-50%, -50%) scale(1);
+      }
+    }
 
-.popup-image {
-  width: 90%;
-  height: auto;
-}
+    .popup-image {
+      width: 90%;
+      height: auto;
+    }
 
-.audio-off {
-  background-color: #ddd;
-}
+    .audio-off {
+      background-color: #ddd;
+    }
 
-.audio-on {
-  background-color: #ff7f50;
-}
+    .audio-on {
+      background-color: #ff7f50;
+    }
 
-.audio-button img {
-  width: 90%;
-  height: 90%;
-}
+    .audio-button img {
+      width: 90%;
+      height: 90%;
+    }
 
-.header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: rgba(255, 255, 255, 0.8);
-  padding: 10px;
-  text-align: center;
-  font-size: 24px;
-  font-weight: bold;
-  z-index: 999;
-}
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 10px;
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      z-index: 999;
+    }
 
-@media screen and (max-width: 600px) {
-  .header {
-    font-size: 16px;
-  }
+    @media screen and (max-width: 600px) {
+      .header {
+        font-size: 16px;
+      }
 
-  .container {
-    margin-bottom: -230px;
-  }
+      .container {
+        margin-bottom: -230px;
+      }
 
-  .dropZone {
-    margin-bottom: 280px;
-  }
+      .dropZone {
+        margin-bottom: 280px;
+      }
 
-  .keyboard-container {
-    top: 310px;
-  }
+      .keyboard-container {
+        top: 310px;
+      }
 
-  .keyboards {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-}
+      .keyboards {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    }
 
 
   </style>
@@ -480,7 +501,7 @@ img {
   </script>
 </head>
 <body>
-  <div class="header">Modo de Juego Oraciones (NIVEL 1)</div>
+  <div class="header">Modo de juego oraciones (NIVEL 1)</div>
 
   <img src="../imagenes/papa.jpg" alt="Niños">
   

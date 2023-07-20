@@ -65,7 +65,7 @@
 <body>
 
 <div class="title-container">
-    <h1>BIENVENIDO ESCOGE COMO JUGAR</h1>
+    <h1>BIENVENIDO ESCOJE COMO JUGAR</h1>
 </div>
 
 <div id="contenedor">

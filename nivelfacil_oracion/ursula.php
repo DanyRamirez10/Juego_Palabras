@@ -3,18 +3,18 @@
 <head>
   <style>
     body {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    overflow: hidden;
-    background-image: url("../imagenes/fondoO.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    }
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  background-image: url("../imagenesO/fondoOra.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 
     .container {
     flex-grow: 1;
@@ -53,30 +53,47 @@
 
     .keyboard-1 {
   background-color: lightblue;
-  font-size: 30px;
+  font-size: 60px;
   font-weight: bold;
   font-family: 'Lumen-Full', sans-serif; /* Agrega la fuente Lumen-Full */
+  width: 150px; /* Ajusta el valor según lo que necesites */
+  height: 70px; /* Ajusta el valor según lo que necesites */
+  padding: 10px; /* Ajusta el valor según lo que necesites */
+  text-align: center;
 }
 
 .keyboard-2 {
   background-color: lightgreen;
-  font-size: 30px;
+  font-size: 60px;
   font-weight: bold;
   font-family: 'Lumen-Full', sans-serif; /* Agrega la fuente Lumen-Full */
+  width: 150px; /* Ajusta el valor según lo que necesites */
+  height: 70px; /* Ajusta el valor según lo que necesites */
+  padding: 10px; /* Ajusta el valor según lo que necesites */
+  text-align: center;
 }
 
 .keyboard-3 {
   background-color: lightyellow;
-  font-size: 30px;
+  font-size: 60px;
   font-weight: bold;
-  font-family: 'Lumen-Full', sans-serif; /* Agrega la fuente Lumen-Full */
+  font-family: 'Lumen-Full', sans-serif;
+  width: 150px; /* Ajusta el valor según lo que necesites */
+  height: 70px; /* Ajusta el valor según lo que necesites */
+  padding: 10px; /* Ajusta el valor según lo que necesites */
+  text-align: center;
 }
+
 
 .keyboard-4 {
   background-color: lightpink;
-  font-size: 30px;
+  font-size: 60px;
   font-weight: bold;
   font-family: 'Lumen-Full', sans-serif; /* Agrega la fuente Lumen-Full */
+  width: 150px; /* Ajusta el valor según lo que necesites */
+  height: 70px; /* Ajusta el valor según lo que necesites */
+  padding: 10px; /* Ajusta el valor según lo que necesites */
+  text-align: center;
 }
 
     @font-face {
@@ -87,7 +104,7 @@
     display: inline-block;
     border: none;
     padding: 0;
-    margin: 3px;
+    margin: 5px;
     font-size: 45px;/*tamano de las letras*/
     font-weight: bold;
     font-family: 'Lumen-Full', sans-serif;
@@ -167,6 +184,7 @@
     height: auto;
     margin-top: 10px;
     cursor: pointer;
+    background-color: white
     }
 
     .button-top-right {
