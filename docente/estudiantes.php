@@ -42,7 +42,7 @@
       top: 10px;
       right: 10px;
       padding: 8px 15px;
-      background-color: #ccc;
+      background-color: #007bff;
       border: none;
       border-radius: 4px;
       cursor: pointer;

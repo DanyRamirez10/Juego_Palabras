@@ -56,9 +56,22 @@
             border: none;
             font-size: 50px;
             cursor: pointer;
-    
-        
         }
+        .back-button {
+            position: fixed;
+            bottom: 70px;
+            left: 20px;
+            background-color: #FF5733;
+            padding: 10px 20px;
+            border-radius: 5px;
+            color: white;
+            text-decoration: none;
+            font-size: 40px;
+        }
+        .back-button:hover {
+            background-color: #FF704D;
+        }
+
     </style>
     <title>ESCOGE COMO JUGAR</title>
 </head>
@@ -80,9 +93,7 @@
         <button onclick="location.href='NivelesO.php'">Oraciones</button>
     </center>  
 </div>
-
-
-
+<a href="../loginAlumno.php" class="back-button">Atrás</a>
 </body>
 </html>
 

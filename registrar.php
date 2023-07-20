@@ -15,7 +15,7 @@
 <input type="submit" value="Registrar" name="btnregistrar">
 
 <br>
-<a href="index.php" style="float:right">Regresar</a>
+<a href="loginAlumno.php" style="float:right">Regresar</a>
 
 </form>
 </body>
