@@ -315,7 +315,7 @@ function showErrorMessage(message) {
       window.location.href = 'pulpo.php'; // Reemplaza con la URL de redirección correcta
     });
     function goBack() {
-      window.location.href = 'piña.php'; // Reemplaza con la URL para retroceder
+      window.location.href = 'pina.php'; // Reemplaza con la URL para retroceder
     }
     function goBack() {
       window.history.back();

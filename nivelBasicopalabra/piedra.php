@@ -311,7 +311,7 @@ function showErrorMessage(message) {
 
     var redirectButton = document.getElementById('redirectButton');
     redirectButton.addEventListener('click', function() {
-      window.location.href = 'piña.php'; // Reemplaza con la URL de redirección correcta
+      window.location.href = 'pina.php'; // Reemplaza con la URL de redirección correcta
     });
     function goBack() {
       window.location.href = 'pera.php'; // Reemplaza con la URL para retroceder

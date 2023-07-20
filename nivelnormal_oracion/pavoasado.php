@@ -449,7 +449,7 @@
       nextButton.classList.add("next-button"); // Agrega la clase "next-button"
       nextButton.addEventListener("click", function() {
         if (canContinue) {
-          window.location.href = "niñocortacoco.php";
+          window.location.href = "ninocortacoco.php";
         }
       });
       

@@ -315,7 +315,7 @@ function showErrorMessage(message) {
       window.location.href = 'mama.php'; // Reemplaza con la URL de redirección correcta
     });
     function goBack() {
-      window.location.href = 'leña.php'; // Reemplaza con la URL para retroceder
+      window.location.href = 'lena.php'; // Reemplaza con la URL para retroceder
     }
     function goBack() {
       window.history.back();
