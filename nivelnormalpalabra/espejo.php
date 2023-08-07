@@ -218,6 +218,7 @@
   </div>
   <audio id="successAudio" src="../sonidos/felicidades.mp3" preload="auto"></audio>
   <audio id="errorAudio" src="../sonidos/ay-caramba.mp3" preload="auto"></audio>
+  <audio id="ballAudio" src="../sonidos/Espejo.mp3" preload="auto"></audio>
   <!--<audio id="ballAudio" src="../sonidos/casa.mp3" preload="auto"></audio>-->
 
   <script>

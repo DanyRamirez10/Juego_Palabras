@@ -7,7 +7,7 @@ $email = $_POST["ema"];
 $password   = $_POST["pass"];
 if(isset($_POST["btningresar"]))
 {
-	$query =("SELECT COUNT(*) as contar FROM docente WHERE emaUsu= '$email' AND contraseña='$password'");
+	$query =("SELECT COUNT(*) as contar FROM docente WHERE emaUsu= '$email' AND pasUsu='$password'");
 	$consulta = mysqli_query($conn, $query);
 	$array = mysqli_fetch_array($consulta);
 	
@@ -47,7 +47,7 @@ if(empty($_POST["nom"])){
 				   echo "<script> alert('el correo electronico ya existe, intente ingresar nuevo correo'); window.location='index.php' </script>";  
             }else{
 			if(isset($_POST["btnregistrar"])){
-	            $sqlgrabar = "INSERT INTO docente(nomUsu,emaUsu,contraseña) values ('$nom','$email','$password')";
+	            $sqlgrabar = "INSERT INTO docente(nomUsu,emaUsu,pasUsu) values ('$nom','$email','$password')";
 	
 	                if(mysqli_query($conn,$sqlgrabar)){
 		                echo "<script> alert('Usuario registrado con exito: $nombres'); window.location='index.php' </script>";

@@ -122,8 +122,9 @@
             background-size: contain;
             font-size: 40px; /* Tamaño de fuente aumentado */
     }
-    </style>
+</style>
 </head>
+<audio id="ballAudio" src="../sonidos/Espejo.mp3" preload="auto"></audio>
 
 <body>
     <h1>-JUEGO DE PALABRAS-</h1>
@@ -140,9 +141,9 @@
     <button id="volver" onclick="javascript:window.location.href = '../pantallas/NivelesP.php';"></button>
 
     <!-- Audio de error -->
-    <audio id="audioError" src="../sonidos/error2.mp3"></audio>
+    <audio id="audioError" src="../sonidos/error.mp3"></audio>
     <!-- Audio de felicitaciones -->
-<audio id="audioFelicitaciones" src="../sonidos/felicidades.mp3"></audio>
+    <audio id="audioFelicitaciones" src="../sonidos/bien.mp3"></audio>
 
     <script>
         /* Variables */

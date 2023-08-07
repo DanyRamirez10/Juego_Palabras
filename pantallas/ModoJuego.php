@@ -84,13 +84,13 @@
 <div id="contenedor">
     <center>
         <br>
-        <button onclick="location.href='NivelesP.php'">Palabras</button>
+        <button onclick="location.href='NivelesP.php'"style="width: 350px; height: 150px;">Palabras</button>
     </center>  
 </div>
 <div id="contenedor">
     <center>
         <br>
-        <button onclick="location.href='NivelesO.php'">Oraciones</button>
+        <button onclick="location.href='NivelesO.php'"style="width: 350px; height: 150px;">Oraciones</button>
     </center>  
 </div>
 <a href="../loginAlumno.php" class="back-button">Atrás</a>

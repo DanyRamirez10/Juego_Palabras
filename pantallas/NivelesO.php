@@ -69,17 +69,17 @@
 
     /* Establecer imagen de fondo para el botón "Nivel Fácil" */
     .nivel-facil {
-        background-image: url('../imagenes/nivelfacil.png');
+        background-image: url('../imagenes/nivel1.jpg');
     }
 
     /* Establecer imagen de fondo para el botón "Nivel Normal" */
     .nivel-normal {
-        background-image: url('../imagenes/nivelnormal.png');
+        background-image: url('../imagenes/nivel2.jpg');
     }
 
     /* Establecer imagen de fondo para el botón "Nivel Difícil" */
     .nivel-dificil {
-        background-image: url('../imagenes/niveldificil.png');
+        background-image: url('../imagenes/nivel3.jpg');
     }
 
     /* Establecer para los botones adicionales */

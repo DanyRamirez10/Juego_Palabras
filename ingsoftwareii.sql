@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 20-07-2023 a las 09:30:18
+-- Tiempo de generación: 07-08-2023 a las 07:35:13
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -31,14 +31,14 @@ CREATE TABLE `docente` (
   `idUsu` int(10) NOT NULL,
   `nomUsu` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   `emaUsu` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `contraseña` varchar(20) NOT NULL
+  `pasUsu` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `docente`
 --
 
-INSERT INTO `docente` (`idUsu`, `nomUsu`, `emaUsu`, `contraseña`) VALUES
+INSERT INTO `docente` (`idUsu`, `nomUsu`, `emaUsu`, `pasUsu`) VALUES
 (3, 'Dany', 'usuario1@gmail.com', '123456');
 
 -- --------------------------------------------------------
@@ -59,7 +59,7 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`idAlum`, `nomAlum`, `appAlum`, `apmAlum`) VALUES
-(11, 'Dany', 'Ramirez', 'Limas');
+(15, 'Dany Santiago', 'Ramirez', 'Limas');
 
 --
 -- Índices para tablas volcadas
@@ -91,7 +91,7 @@ ALTER TABLE `docente`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `idAlum` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `idAlum` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

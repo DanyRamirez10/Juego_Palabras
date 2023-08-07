@@ -9,8 +9,8 @@
 <body>
 <form action="login_registrar.php" method="POST">
 <h2>Crear una cuenta</h2>
-<input type="text" placeholder="&#x270d; Nombre" name="nom" required pattern="[a-zÑñA-Z]+">
-<input type="email" placeholder="&#x270d; Correo" name="ema" required>
+<input type="text" placeholder="&#x270d; Nombre" name="nom" required pattern="[a-zÑñA-Z ]+">
+<input type="email" placeholder="&#x270d; Correo" name="ema" required pattern="[a-zÑñ@_.A-Z1-9]+">
 <input type="password" placeholder="&#x270d; Contraseña" name="pass" required>
 <input type="submit" value="Registrar" name="btnregistrar">
 

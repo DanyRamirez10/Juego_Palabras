@@ -41,7 +41,7 @@
 
 <script>
 function goBack() {
-  window.location.href = " ../index.php  ";
+  window.location.href = " ../index.php ";
 }
 </script>
 </body>

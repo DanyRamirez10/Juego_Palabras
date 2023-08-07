@@ -140,9 +140,9 @@
     <button id="volver" onclick="javascript:window.location.href = 'gato.php';"></button>
 
     <!-- Audio de error -->
-    <audio id="audioError" src="../sonidos/error2.mp3"></audio>
+    <audio id="audioError" src="../sonidos/error.mp3"></audio>
     <!-- Audio de felicitaciones -->
-    <audio id="audioFelicitaciones" src="../sonidos/felicidades.mp3"></audio>
+    <audio id="audioFelicitaciones" src="../sonidos/bien.mp3"></audio>
 
     <script>
         /* Variables */

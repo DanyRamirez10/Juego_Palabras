@@ -316,11 +316,18 @@ body {
       var keyboards = document.querySelectorAll(".keyboard");
       var syllablesContainer = document.createElement("div");
       syllablesContainer.classList.add("syllables");
+      // Obtén la referencia a la imagen y al audio
+      var imagenNinos = document.getElementById("imagen-ninos");
+      var audioImagen = document.getElementById("audio-imagen");
 
       // Generar una lista de palabras y mezclarla
       var words = ["Mi", "papá", "ama", "a", "Pepe."];
       var shuffledWords = shuffleArray(words);
 
+      imagenNinos.addEventListener("click", function() {
+        // Reproduce el audio al hacer clic en la imagen
+        audioImagen.play();
+       });
       // Mezclar el orden de los teclados
       var shuffledKeyboards = Array.from(keyboards).sort(function() {
         return 0.5 - Math.random();
@@ -514,8 +521,10 @@ body {
 <body>
   <div class="header">Modo de juego oraciones (NIVEL 1)</div>
 
-  <img src="../imagenes/Pepe.jpg" alt="Niños">
-  
+  <img id="imagen-ninos" src="../imagenes/Pepe.jpg" alt="Niños">
+  <!--reproduccion de audio al hacer clic en la imagen-->
+  <audio id="audio-imagen" src="../sonidos/oraciones_nivelFacil/papa_pepe.mp3"></audio>
+
   <div class="container">
     <div class="dropZone">
       <div class="syllables">
@@ -537,9 +546,9 @@ body {
   <div class="button-container">
   </div>
 
-  <audio id="audio-congratulations" src="../sonidos/felicidades.mp3"></audio>
+  <audio id="audio-congratulations" src="../sonidos/bien.mp3"></audio>
   <audio id="audio-new" src="../sonidos/audioInicial.mp3"></audio>
-  <audio id="audio-error" src="../sonidos/gameOver.wav"></audio>
+  <audio id="audio-error" src="../sonidos/error.mp3"></audio>
 
   <div class="button-top-left">
     <img src="../imagenes/menuP.png" alt="Botón adicional" onclick="window.location.href = '../pantallas/NivelesO.php';" />
